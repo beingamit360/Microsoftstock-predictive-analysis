@@ -1,0 +1,36 @@
+# Microsoft-predictive-analysis-
+Mini project based on Microsoft Stock Price Prediction using Python packages:-
+
+### Abstract:
+This project utilizes a Long Short-Term Memory (LSTM) neural network to predict Microsoft's stock prices based on historical data. LSTM networks are a type of recurrent neural network (RNN) designed to capture intricate patterns and dependencies in sequential data. By employing this advanced model, the project aims to enhance the accuracy of stock price predictions and contribute to the field of financial forecasting.
+
+### Introduction:
+Financial markets are dynamic and influenced by numerous factors, making accurate stock price prediction a challenging task. This project focuses on leveraging the capabilities of LSTM networks to overcome the limitations of traditional models. The LSTM model is trained on historical Microsoft stock prices, capturing temporal dependencies and providing insights into potential future trends.
+
+### Objectives:
+- Implement an LSTM-based stock price prediction model using TensorFlow and Keras.
+- Utilize historical Microsoft stock data for training and testing the model.
+- Evaluate the model's performance using key metrics, including root mean squared error (RMSE).
+- Visualize and compare actual vs. predicted stock prices for interpretation.
+
+### Description:
+Dataset:
+The project employs Microsoft stock data obtained from Yahoo Finance for the year 2022. The dataset includes daily closing prices, which serve as the target variable for the LSTM model.
+
+#### Methodology:
+1. **Data Preprocessing:**
+   - Normalize stock prices to facilitate model training.
+   - Create sequences of historical prices and labels for training.
+
+2. **LSTM Model:**
+   - Build a Sequential model with LSTM layers using TensorFlow and Keras.
+   - Train the model on the training dataset, optimizing for accurate predictions.
+
+3. **Evaluation:**
+   - Assess the model's performance using RMSE as a quantitative metric.
+   - Visualize the predictions against actual stock prices for qualitative analysis.
+
+### Conclusion:
+The LSTM-based stock price prediction model demonstrates promising results in capturing temporal dependencies and providing accurate predictions for Microsoft stock prices. As financial forecasting is inherently complex, continuous refinement and exploration of advanced models remain crucial for enhancing predictive capabilities in dynamic markets. This project serves as a foundation for further research and application of deep learning techniques in financial analytics.
+
+---
