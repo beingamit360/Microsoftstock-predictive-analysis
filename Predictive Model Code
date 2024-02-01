@@ -18,17 +18,19 @@ msft.set_index('Date', inplace=True)
 msft = msft[['Close']]
 
 # Normalize data
-scaler = MinMaxScaler(feature_range=(0, 1))
+msft = msft.copy()
 msft['Close'] = scaler.fit_transform(np.array(msft['Close']).reshape(-1, 1))
+
 
 # Create sequences for LSTM
 def create_sequences(data, seq_length):
     sequences = []
-    for i in range(len(data)-seq_length):
-        seq = data[i:i+seq_length]
-        label = data[i+seq_length:i+seq_length+1]
+    for i in range(len(data) - seq_length):
+        seq = data[i:i + seq_length]
+        label = data[i + seq_length:i + seq_length + 1]
         sequences.append((seq, label))
     return np.array(sequences)
+
 
 # Define sequence length
 sequence_length = 10
@@ -70,6 +72,7 @@ print(f"Train RMSE: {train_rmse}")
 print(f"Test RMSE: {test_rmse}")
 
 # Visualize predictions
+import matplotlib.pyplot as plt
 plt.figure(figsize=(14, 7))
 plt.plot(msft.index[-len(y_test_original):], y_test_original, label='Actual Prices', marker='o')
 plt.plot(msft.index[-len(y_test_original):], test_predict, label='Predicted Prices', marker='o')
